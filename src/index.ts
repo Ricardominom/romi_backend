@@ -1,14 +1,8 @@
-import express from 'express'
-
-const app = express()
-
-//Routing
-app.get('/', (req, res) => {
-    res.send('hola mundo')
-})
+import server from './server'
+import colors from 'colors'
 
 const port = process.env.PORT || 4000
 
-app.listen(port, () => {
-    console.log('Servidor funcionando en el puerto:', port)
+server.listen(port, () => {
+    console.log(colors.blue.bold(`Servidor funcionando en el puerto: ${port}`))
 })
